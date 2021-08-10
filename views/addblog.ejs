@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+
+  </head>
+  <body>
+    <%- include layout %>
+    <div class="container">
+        <%- messages() %>
+        <h2 align="center">เขียนบทความ</h2>
+        
+       
+        <form class="" action="/blog/add" method="post">
+            <div class="form-group">
+                <label for="">ชื่อบทความ</label>
+                <input type="text" name="name" value="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">รายละเอียด</label>
+                <textarea name="discription" rows="8" cols="80" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">ผู้แต่ง</label>
+                <input type="text" name="author" value="" class="form-control">
+            </div>
+            <input type="submit" name="" value="บันทึก" class="btn btn-primary">
+    </div>
+    <script>  
+        $(function(){ 
+            $('#messages').addClass('alert alert-success');
+        })
+        CKEDITOR.replace( 'discription' );
+    </script>
+      
+</body>
+</html>
